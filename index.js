@@ -20,7 +20,7 @@ function updateX() {
     return x
 }
 function updateY() {
-    if (y > window.innerHeight-400) {
+    if (y > window.innerHeight-350) {
         suby = true;
     } else if (y <= 0) {
         suby = false;
