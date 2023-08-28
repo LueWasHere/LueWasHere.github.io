@@ -15,21 +15,21 @@ onmessage = (event) => { // Execute on message from the main script
             // Show in the console that we're requesting a job
             console.log(`CPU${workerVer}: Requesting a job...\n`);
             // Asks for a job
-            socket.send(`JOB,${username},LOW`);
+            socket.send(`JOB,${username},LOW,None`);
         } else if (event.data === `GOOD\n`) { // If our share is correct
             // Show in the console that the share was correct
             console.log(`CPU${workerVer}: and the share was correct!\n`);
             // Show in the console that we're requesting a new job
             console.log(`CPU${workerVer}: Requesting a new job...\n`);
             // Ask for a new job
-            socket.send(`JOB,${username},LOW`);
+            socket.send(`JOB,${username},LOW,None`);
         } else if (event.data === `BAD\n`) { // If our share is incorrect
             // Show in the console that the share was wrong
             console.log(`CPU${workerVer}: and the share was wrong...\n`);
             // Show in the console that we're requesting a new job
             console.log(`CPU${workerVer}: Requesting a new job...\n`);
             // Ask for a new job
-            socket.send(`JOB,${username},LOW`);
+            socket.send(`JOB,${username},LOW,None`);
         } else { // If the server sends a job
             // Show in console that we recieved a new job, and shows the contents
             console.log(`CPU${workerVer}: New job recieved! It contains: ${event.data}`);
